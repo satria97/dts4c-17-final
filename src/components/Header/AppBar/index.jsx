@@ -11,12 +11,18 @@ export default function AppBar() {
   const [clock, setClock] = useState('');
   const userName = 'Hi, randomUser77';
 
-  function toggleDropdown() {
-    const dropdown = document.getElementById('dropdown');
+  const dropdown = document.getElementById('dropdown');
 
-    dropdown.classList.contains('hide')
-      ? dropdown.classList.remove('hide')
-      : dropdown.classList.add('hide');
+  function toggleDropdown() {
+    dropdown.classList.toggle('hide')
+  }
+
+  function closeDropdown() {
+    dropdown.classList.add('hide');
+  } 
+
+  function openDropdown() {
+    dropdown.classList.remove('hide');
   }
 
   function implementClock() {
@@ -48,8 +54,9 @@ export default function AppBar() {
           </button>
           <button
             type="button"
-            onMouseEnter={toggleDropdown}
-            onMouseLeave={toggleDropdown}
+            onMouseEnter={openDropdown}
+            onMouseLeave={closeDropdown}
+            onClick={toggleDropdown}
           >
             <FontAwesomeIcon icon={faBars} />
           </button>
@@ -58,8 +65,8 @@ export default function AppBar() {
       <ul
         className="appbar-dropdown hide"
         id="dropdown"
-        onMouseEnter={toggleDropdown}
-        onMouseLeave={toggleDropdown}
+        onMouseEnter={openDropdown}
+        onMouseLeave={closeDropdown}
       >
         <li className="dropdown-menu-item">
           <Link to="/settings">Settings</Link>
