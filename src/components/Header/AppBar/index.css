@@ -1,0 +1,67 @@
+.appbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--tertiary-color);
+  width: 100%;
+  height: 20px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--secondary-color);
+  z-index: 1;
+  cursor: default;
+}
+
+.appbar-profile-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 8px;
+}
+
+.appbar-profile-info button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.appbar-setting-btns {
+  display: flex;
+  gap: 8px;
+  margin-right: 8px;
+}
+
+.appbar-dropdown {
+  background-color: var(--tertiary-color);
+  width: 100px;
+  text-align: center;
+  border: 0.5px solid var(--secondary-color);
+  border-top: none;
+  position: fixed;
+  right: 0;
+  margin: 0;
+  padding: 0px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.appbar-dropdown.hide {
+  display: none;
+}
+
+.dropdown-menu-item {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.dropdown-menu-item a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.dropdown-menu-item:hover {
+  background-color: var(--secondary-color);
+  opacity: 0.8;
+  cursor: pointer;
+}
