@@ -29,12 +29,13 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
   background-color: var(--primary-color);
   color: var(--text-color);
-  height: 100vh;
   margin: 0;
+  padding-bottom: 50px;
 }
 
 .app-container {
-  padding: 50px 50px;
+  padding: 50px;
+
 }
 
 input:focus,
@@ -48,4 +49,16 @@ button {
 
 button:active {
   transform: scale(0.9);
+}
+
+@media (max-width: 950px) {
+  .app-container {
+    padding: 35px;
+  }
+}
+
+@media (max-width: 400px) {
+  .app-container {
+    padding: 35px 15px;
+  }
 }

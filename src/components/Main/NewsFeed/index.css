@@ -1,0 +1,14 @@
+.newsfeed {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+
+.latest-news-heading {
+  padding-top: 10px;
+}
