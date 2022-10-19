@@ -28,3 +28,18 @@ html.dark .banner-logo {
 .banner-title h3 {
   font-weight: 400;
 }
+
+@media (max-width: 500px) {
+  .banner-logo {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .banner-title h1 {
+    font-size: 25px;
+  }
+
+  .banner-title h3 {
+    font-size: 18px;
+  }
+}

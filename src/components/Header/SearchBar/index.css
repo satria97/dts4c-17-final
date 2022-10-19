@@ -34,3 +34,9 @@ input::placeholder {
   cursor: pointer;
   color: var(--text-color);
 }
+
+@media (max-width: 470px) {
+  .search-form input:focus {
+    width: 300px;
+  }
+}
