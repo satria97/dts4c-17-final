@@ -1,11 +1,13 @@
 .footer {
-  top: auto;
   bottom: 0;
   left: 0;
   text-align: center;
-  background-color: rgb(175, 173, 173);
-  color: black;
-  position: fixed;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  position: absolute;
   width: 100%;
-  display: inline-block;
+  height: 18px;
+  padding: 4px 0;
+  line-height: 20px;
+  font-family: inherit;
 }

@@ -31,11 +31,11 @@ body {
   color: var(--text-color);
   margin: 0;
   padding-bottom: 50px;
+  position: relative;
 }
 
 .app-container {
   padding: 50px;
-
 }
 
 input:focus,

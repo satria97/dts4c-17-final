@@ -12,7 +12,7 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <p>Clipping &#169;{date}</p>
+      <small>Clipping &#169;{date}</small>
     </footer>
   )
 }
