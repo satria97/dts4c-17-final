@@ -11,11 +11,10 @@ export default function DarkModeBtn() {
   const DARK_MODE_STATUS = 'DARK_MODE_STATUS';
   const [darkMode, setDarkMode] = useState(false);
 
+  const darkModeStatus = localStorage.getItem(DARK_MODE_STATUS);
   const html = document.documentElement;
 
   useEffect(() => {
-    const darkModeStatus = localStorage.getItem(DARK_MODE_STATUS);
-
     if (darkModeStatus === 'true') {
       html.classList.add('dark');
       setDarkMode(true);
@@ -23,7 +22,7 @@ export default function DarkModeBtn() {
       html.classList.remove('dark');
       setDarkMode(false);
     }
-  });
+  }, [darkModeStatus, html.classList]);
 
   function toggleDarkMode() {
     if (html.classList.contains('dark')) {
