@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import Utils from './components/Utils';
+// import Utils from './components/Utils';
 
 import './App.css';
 
@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Main />
       <Footer />
-      <Utils />
+      {/* <Utils /> */}
     </div>
   );
 }
