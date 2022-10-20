@@ -1,10 +1,10 @@
 .news {
   position: relative;
-  width: 270px;
+  width: 18vw;
   filter: contrast(70%);
   transition: all 0.3s ease;
   display: inline;
-  margin: 0.5rem;
+  margin: 1rem;
 }
 
 .news:hover {
@@ -16,11 +16,12 @@
 }
 
 .news img {
-  width: 270px;
+  width: 100%;
   height: 180px;
   border-radius: 8px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  object-fit: cover;
 }
 
 .news-info {
@@ -45,6 +46,7 @@ html.dark .news-info {
 }
 
 .news-info-detail {
+  margin-top: 15px;
   display: flex;
   flex-direction: row;
   gap: 30px;

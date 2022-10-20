@@ -5,11 +5,13 @@ export default function NewsBanner() {
     <div className="newsbanner">
       <h1 className="newsbanner-header">Hot Topics</h1>
       <div className="newsbanner-content">
-        <img
-          src="https://source.unsplash.com/random"
-          alt="sample newsbanner"
-          className="newsbanner-photo"
-        />
+        <div className='newsbanner-image'>
+          <img
+            src="https://source.unsplash.com/random"
+            alt="sample newsbanner"
+            className="newsbanner-photo"
+          />
+        </div>
         <div className="newsbanner-info">
           <div className="newsbanner-info-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, non?</div>
           <div className="newsbanner-info-detail">
