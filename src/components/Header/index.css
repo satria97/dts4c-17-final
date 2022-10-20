@@ -1,0 +1,10 @@
+header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--tertiary-color);
+}

@@ -1,0 +1,45 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.banner-logo {
+  width: 3rem;
+  height: 3rem;
+}
+
+html.dark .banner-logo {
+  filter: invert(100%);
+}
+
+.banner-title h1,
+.banner-title h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.banner-title h1 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.banner-title h3 {
+  font-weight: 400;
+}
+
+@media (max-width: 500px) {
+  .banner-logo {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .banner-title h1 {
+    font-size: 25px;
+  }
+
+  .banner-title h3 {
+    font-size: 18px;
+  }
+}

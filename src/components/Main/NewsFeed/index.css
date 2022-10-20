@@ -1,0 +1,22 @@
+.newsfeed {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.latest-news-heading {
+  padding-top: 10px;
+}
+
+@media (max-width: 625px) {
+ .news-container {
+  justify-content: center;
+ }
+}
