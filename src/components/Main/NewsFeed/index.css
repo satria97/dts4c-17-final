@@ -16,7 +16,7 @@
 }
 
 @media (max-width: 625px) {
- .news-container {
-  justify-content: center;
- }
+  .news-container {
+    justify-content: center;
+  }
 }
