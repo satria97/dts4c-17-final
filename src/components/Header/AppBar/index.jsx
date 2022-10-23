@@ -14,12 +14,12 @@ export default function AppBar() {
   const dropdown = document.getElementById('dropdown');
 
   function toggleDropdown() {
-    dropdown.classList.toggle('hide')
+    dropdown.classList.toggle('hide');
   }
 
   function closeDropdown() {
     dropdown.classList.add('hide');
-  } 
+  }
 
   function openDropdown() {
     dropdown.classList.remove('hide');

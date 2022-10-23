@@ -11,7 +11,9 @@ export default function NewsBanner() {
           className="newsbanner-photo"
         />
         <div className="newsbanner-info">
-          <div className="newsbanner-info-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, non?</div>
+          <div className="newsbanner-info-title">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, non?
+          </div>
           <div className="newsbanner-info-detail">
             <div className="newsbanner-info-publication">2 hours ago</div>
             <div className="newsbanner-info-source">thegrayzone.com</div>

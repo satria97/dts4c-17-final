@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 export default function Footer() {
   const [date, setDate] = useState();
 
-  const getYear = () => setDate(new Date().getFullYear())
+  const getYear = () => setDate(new Date().getFullYear());
 
   useEffect(() => {
     getYear();
@@ -14,5 +14,5 @@ export default function Footer() {
     <footer className="footer">
       <small>Clipping &#169;{date}</small>
     </footer>
-  )
+  );
 }

@@ -1,10 +1,10 @@
 import './index.css';
 
-function ToastNotif() {
+export default function ToastNotif() {
   return <div className="toast-notif-container" id="toast-notif" />;
 }
 
-function displayToast(message, color, interval = 3000) {
+export function displayToast(message, color, interval = 3000) {
   const toastNotifEl = document.getElementById('toast-notif');
 
   const toastEl = document.createElement('div');
@@ -23,5 +23,3 @@ function displayToast(message, color, interval = 3000) {
     toastEl.remove();
   }, interval);
 }
-
-export { ToastNotif as default, displayToast };
