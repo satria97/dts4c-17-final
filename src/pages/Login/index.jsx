@@ -13,27 +13,36 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Clipping © '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { useContext, useState } from "react";
+import { AuthContext } from "../../components/Provider/AuthProvider";
+import { signingIn } from "../../components/Utils/firebase/signin";
 
-const theme = createTheme();
+export const Login = () => {
 
-export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+  const { setUser } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const signIn = async () => {
+    const signedIn = await signingIn(email, password);
+    if (!signedIn.message) {
+      setUser(signedIn.accessToken);
+    } else {
+      console.log(signedIn.message);
+    }
   };
+
+  const theme = createTheme();
+
+  const Copyright = (props) => {
+    return (
+      <Typography variant="body2" color="text.secondary" align="center" {...props}>
+        {'Clipping © '}
+        {new Date().getFullYear()}
+        {'.'}
+      </Typography>
+    );
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -53,7 +62,7 @@ export default function SignIn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" noValidate onClick={signIn} sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -61,6 +70,8 @@ export default function SignIn() {
               id="email"
               label="Email Address"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               autoComplete="email"
               autoFocus
             />
@@ -72,6 +83,8 @@ export default function SignIn() {
               label="Password"
               type="password"
               id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
             />
             <FormControlLabel

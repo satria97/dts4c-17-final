@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import App from './App';
 import Home from './pages/Home';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
+import { Login } from './pages/Login';
+import { SignUp } from './pages/SignUp';
 import Settings from './pages/Settings';
 // import NotFound from './pages/404';
 import Favorite from './pages/Favorite';

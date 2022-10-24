@@ -13,27 +13,49 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Clipping © '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from "../../components/Provider/AuthProvider";
+import { signingUp } from "../../components/Utils/firebase/signup";
+import { signingIn } from "../../components/Utils/firebase/signin";
 
-const theme = createTheme();
+export const SignUp = () => {
 
-export default function SignUp() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+  const setUser = useContext(AuthContext);
+  const navigate = useNavigate("");
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const signUp = async () => {
+    console.log(firstName, lastName, email, password);
+    const response = await signingUp(firstName, lastName, email, password);
+    console.log("response", response);
+    if (!response.message) {
+      setUser(response.accessToken);
+      // signingIn
+      const signedIn = await signingIn(email, password);
+      if (!signedIn.message) {
+        navigate("/");
+      }
+    } else {
+      console.log("error");
+    }
   };
+
+  const theme = createTheme();
+
+  const Copyright = (props) => {
+    return (
+      <Typography variant="body2" color="text.secondary" align="center" {...props}>
+        {'Clipping © '}
+        {new Date().getFullYear()}
+        {'.'}
+      </Typography>
+    );
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -53,15 +75,16 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" onClick={signUp} noValidate sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  autoComplete="given-name"
                   name="firstName"
                   required
                   fullWidth
                   id="firstName"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                   label="First Name"
                   autoFocus
                 />
@@ -73,7 +96,8 @@ export default function SignUp() {
                   id="lastName"
                   label="Last Name"
                   name="lastName"
-                  autoComplete="family-name"
+                  value={lastName.lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -83,7 +107,8 @@ export default function SignUp() {
                   id="email"
                   label="Email Address"
                   name="email"
-                  autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -94,7 +119,8 @@ export default function SignUp() {
                   label="Password"
                   type="password"
                   id="password"
-                  autoComplete="new-password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>

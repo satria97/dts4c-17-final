@@ -4,14 +4,24 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { useNavigate } from "react-router-dom";
+import { signingOut } from "../../Utils/firebase/signout";
 
 import './index.css';
 
 export default function AppBar() {
+  const navigate = useNavigate();
   const [clock, setClock] = useState('');
   const userName = 'Hi, randomUser77';
 
   const dropdown = document.getElementById('dropdown');
+
+  const signOut = async () => {
+    const loggedOut = await signingOut();
+    if (!loggedOut.message) {
+      navigate("/signup");
+    }
+  };
 
   function toggleDropdown() {
     dropdown.classList.toggle('hide')
@@ -19,7 +29,7 @@ export default function AppBar() {
 
   function closeDropdown() {
     dropdown.classList.add('hide');
-  } 
+  }
 
   function openDropdown() {
     dropdown.classList.remove('hide');
@@ -72,7 +82,7 @@ export default function AppBar() {
           <Link to="/settings">Settings</Link>
         </li>
         <li className="dropdown-menu-item">
-          <Link to="/home">Sign Out</Link>
+          <button onClick={signOut}>Sign Out</button>
         </li>
       </ul>
     </div>
