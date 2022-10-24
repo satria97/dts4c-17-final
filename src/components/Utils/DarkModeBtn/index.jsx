@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 
-import { displayToast } from '../ToastNotif';
-
 import './index.css';
 
 export default function DarkModeBtn() {
@@ -29,14 +27,10 @@ export default function DarkModeBtn() {
       html.classList.remove('dark');
       setDarkMode(false);
 
-      displayToast('Dark mode off 🌞');
-
       localStorage.setItem(DARK_MODE_STATUS, false);
     } else {
       html.classList.add('dark');
       setDarkMode(true);
-
-      displayToast('Dark mode on 🌙');
 
       localStorage.setItem(DARK_MODE_STATUS, true);
     }
