@@ -5,10 +5,10 @@
 
 .news-container {
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .latest-news-heading {
@@ -16,7 +16,7 @@
 }
 
 @media (max-width: 625px) {
- .news-container {
-  justify-content: center;
- }
+  .news-container {
+    justify-content: center;
+  }
 }
