@@ -30,7 +30,6 @@ body {
   background-color: var(--primary-color);
   color: var(--text-color);
   margin: 0 auto;
-  /* position: relative; */
 }
 
 .app-container {
