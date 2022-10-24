@@ -1,6 +1,7 @@
 import './index.css';
+// import React from "react";
 
-export default function NewsBanner() {
+const NewsBanner = () => {
   return (
     <div className="newsbanner">
       <h1 className="newsbanner-header">Hot Topics</h1>
@@ -29,3 +30,5 @@ export default function NewsBanner() {
     </div>
   );
 }
+
+export default NewsBanner;

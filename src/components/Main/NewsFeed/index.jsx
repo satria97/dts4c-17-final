@@ -3,7 +3,7 @@ import News from './News';
 
 import './index.css';
 
-export default function NewsFeed() {
+const NewsFeed = () => {
   return (
     <div className="newsfeed">
       <NewsBanner />
@@ -23,3 +23,5 @@ export default function NewsFeed() {
     </div>
   );
 }
+
+export default NewsFeed;
