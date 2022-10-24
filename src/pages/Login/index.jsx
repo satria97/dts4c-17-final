@@ -62,7 +62,7 @@ export const Login = () => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" noValidate onClick={signIn} sx={{ mt: 1 }}>
+          <Box component="form" noValidate onSubmit={signIn} sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required

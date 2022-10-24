@@ -21,7 +21,7 @@ import { signingIn } from "../../components/Utils/firebase/signin";
 
 export const SignUp = () => {
 
-  const setUser = useContext(AuthContext);
+  const { setUser } = useContext(AuthContext);
   const navigate = useNavigate("");
 
   const [firstName, setFirstName] = useState("");
@@ -74,7 +74,7 @@ export const SignUp = () => {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" onClick={signUp} noValidate sx={{ mt: 3 }}>
+          <Box component="form" onSubmit={signUp} noValidate sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
