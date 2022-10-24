@@ -22,13 +22,13 @@ export default function NewsFeed() {
   //   })();
   // }, []);
 =======
-  useEffect(() => {
-    (async () => {
-      const res = await axios.get(API_URL + API_KEY);
+  // useEffect(() => {
+  //   (async () => {
+  //     const res = await axios.get(API_URL + API_KEY);
 
-      setNews(res.data.articles);
-    })();
-  }, [API_KEY]);
+  //     setNews(res.data.articles);
+  //   })();
+  // }, [API_KEY]);
 >>>>>>> 2cca67157f750df72880d7b5d7ee4df68e2f5c63
 
   return (
