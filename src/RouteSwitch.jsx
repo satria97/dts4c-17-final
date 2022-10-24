@@ -5,13 +5,14 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Settings from './pages/Settings';
-// import NotFound from './pages/404';
+import NotFound from './pages/404';
 import Favorite from './pages/Favorite';
 
 export default function RouteSwitch() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<App />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
