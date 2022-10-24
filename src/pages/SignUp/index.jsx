@@ -35,7 +35,6 @@ export const SignUp = () => {
     console.log("response", response);
     if (!response.message) {
       setUser(response.accessToken);
-      // signingIn
       const signedIn = await signingIn(email, password);
       if (!signedIn.message) {
         navigate("/");
