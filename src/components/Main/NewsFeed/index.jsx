@@ -16,10 +16,10 @@ export default function NewsFeed() {
   useEffect(() => {
     (async () => {
       const res = await axios.get(API_URL + API_KEY);
-      
+
       setNews(res.data.articles);
     })();
-  }, []);
+  }, [API_KEY]);
 
   return (
     <div className="news-container">
