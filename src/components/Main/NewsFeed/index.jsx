@@ -13,15 +13,6 @@ export default function NewsFeed() {
   // const API_KEY = process.env.REACT_APP_NEWSAPI_API_KEY;
   // const API_URL = 'https://newsapi.org/v2/everything?q=indonesia&apiKey=';
 
-<<<<<<< HEAD
-  // useEffect(() => {
-  //   (async () => {
-  //     const res = await axios.get(API_URL + API_KEY);
-
-  //     setNews(res.data.articles);
-  //   })();
-  // }, []);
-=======
   // useEffect(() => {
   //   (async () => {
   //     const res = await axios.get(API_URL + API_KEY);
@@ -29,7 +20,6 @@ export default function NewsFeed() {
   //     setNews(res.data.articles);
   //   })();
   // }, [API_KEY]);
->>>>>>> 2cca67157f750df72880d7b5d7ee4df68e2f5c63
 
   return (
     <div className="news-container">
