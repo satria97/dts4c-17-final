@@ -72,7 +72,7 @@ export default function AppBar() {
         onMouseLeave={closeDropdown}
       >
         <li className="dropdown-menu-item">
-          <button onClick={signOut}>Sign Out</button>
+          <a onClick={signOut}>Sign Out</a>
         </li>
       </ul>
     </div>
