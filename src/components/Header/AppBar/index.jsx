@@ -3,21 +3,20 @@ import { useEffect, useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 import { signingOut } from '../../Utils/firebase/signout';
 
 import './index.css';
 
 export default function AppBar() {
-  const navigate = useNavigate();
   const [clock, setClock] = useState('');
-  const userName = 'Hi, randomUser77';
-
+  const navigate = useNavigate();
   const dropdown = document.getElementById('dropdown');
 
   const signOut = async () => {
     const loggedOut = await signingOut();
     if (!loggedOut.message) {
-      navigate('/signup');
+      navigate('/home');
     }
   };
 
@@ -54,7 +53,6 @@ export default function AppBar() {
   return (
     <div className="appbar">
       <div className="appbar-profile-info">
-        <div>{userName}</div>
         <div>{clock}</div>
         <div className="appbar-setting-btns">
           <button

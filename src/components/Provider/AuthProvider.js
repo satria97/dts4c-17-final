@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
         }
       } else {
         if (pathname === '/') {
-          window.location.replace('/login');
+          window.location.replace('/home');
         }
       }
     });
