@@ -16,6 +16,9 @@ import { AuthContext } from '../../components/Provider/AuthProvider';
 import { signingUp } from '../../components/Utils/firebase/signup';
 import { signingIn } from '../../components/Utils/firebase/signin';
 
+import { displayToast } from '../../components/Utils/ToastNotif';
+import ToastNotif from '../../components/Utils/ToastNotif';
+
 import './index.css';
 
 export const SignUp = () => {
@@ -35,7 +38,7 @@ export const SignUp = () => {
         navigate('/');
       }
     } else {
-      console.log('error');
+      displayToast('Invalid username and password! ❌', 'red');
     }
   };
 
@@ -115,6 +118,7 @@ export const SignUp = () => {
           </Box>
         </Box>
       </Container>
+      <ToastNotif />
     </div>
   );
 };
