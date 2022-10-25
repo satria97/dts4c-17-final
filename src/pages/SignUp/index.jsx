@@ -15,31 +15,28 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from "../../components/Provider/AuthProvider";
-import { signingUp } from "../../components/Utils/firebase/signup";
-import { signingIn } from "../../components/Utils/firebase/signin";
+import { AuthContext } from '../../components/Provider/AuthProvider';
+import { signingUp } from '../../components/Utils/firebase/signup';
+import { signingIn } from '../../components/Utils/firebase/signin';
 
 export const SignUp = () => {
-
   const { setUser } = useContext(AuthContext);
-  const navigate = useNavigate("");
+  const navigate = useNavigate('');
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const signUp = async () => {
-    const response = await signingUp(firstName, lastName, email, password);
-    console.log("response", response);
+    const response = await signingUp(email, password);
+    console.log('response', response);
     if (!response.message) {
       setUser(response);
       const signedIn = await signingIn(email, password);
       if (!signedIn.message) {
-        navigate("/");
+        navigate('/');
       }
     } else {
-      console.log("error");
+      console.log('error');
     }
   };
 
@@ -47,13 +44,18 @@ export const SignUp = () => {
 
   const Copyright = (props) => {
     return (
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      <Typography
+        variant="body2"
+        color="text.secondary"
+        align="center"
+        {...props}
+      >
         {'Clipping © '}
         {new Date().getFullYear()}
         {'.'}
       </Typography>
     );
-  }
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -73,63 +75,39 @@ export const SignUp = () => {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" onSubmit={signUp} noValidate sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  value={lastName.lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
+          <Box noValidate sx={{ mt: 3 }}>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <FormControlLabel
+                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                label="I want to receive inspiration, marketing promotions and updates via email."
+              />
             </Grid>
             <Button
-              type="submit"
+              type="button"
+              onClick={signUp}
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
@@ -149,4 +127,4 @@ export const SignUp = () => {
       </Container>
     </ThemeProvider>
   );
-}
+};

@@ -13,15 +13,14 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { useContext, useState } from "react";
-import { AuthContext } from "../../components/Provider/AuthProvider";
-import { signingIn } from "../../components/Utils/firebase/signin";
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../components/Provider/AuthProvider';
+import { signingIn } from '../../components/Utils/firebase/signin';
 
 export const Login = () => {
-
   const { setUser } = useContext(AuthContext);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const signIn = async () => {
     const signedIn = await signingIn(email, password);
@@ -36,13 +35,20 @@ export const Login = () => {
 
   const Copyright = (props) => {
     return (
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      <Typography
+        variant="body2"
+        color="text.secondary"
+        align="center"
+        {...props}
+      >
         {'Clipping © '}
         {new Date().getFullYear()}
         {'.'}
       </Typography>
     );
-  }
+  };
+
+  console.log(email, password);
 
   return (
     <ThemeProvider theme={theme}>
@@ -62,7 +68,8 @@ export const Login = () => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" noValidate onSubmit={signIn} sx={{ mt: 1 }}>
+
+          <Box noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -92,7 +99,8 @@ export const Login = () => {
               label="Remember me"
             />
             <Button
-              type="submit"
+              type="button"
+              onClick={signIn}
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
@@ -117,4 +125,4 @@ export const Login = () => {
       </Container>
     </ThemeProvider>
   );
-}
+};
