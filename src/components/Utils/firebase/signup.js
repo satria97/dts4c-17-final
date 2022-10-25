@@ -10,7 +10,7 @@ export const signingUp = async (email, password) => {
     );
     return userClient.user;
   } catch (error) {
-    console.log(error);
+    console.log('error signup', error);
     return error;
   }
 };

@@ -10,16 +10,16 @@ import './index.css';
 export default function NewsFeed() {
   const [news, setNews] = useState([]);
 
-  // const API_KEY = process.env.REACT_APP_NEWSAPI_API_KEY;
-  // const API_URL = 'https://newsapi.org/v2/everything?q=indonesia&apiKey=';
+  const API_KEY = process.env.REACT_APP_NEWSAPI_API_KEY;
+  const API_URL = 'https://newsapi.org/v2/everything?q=indonesia&apiKey=';
 
-  // useEffect(() => {
-  //   (async () => {
-  //     const res = await axios.get(API_URL + API_KEY);
+  useEffect(() => {
+    (async () => {
+      const res = await axios.get(API_URL + API_KEY);
 
-  //     setNews(res.data.articles);
-  //   })();
-  // }, [API_KEY]);
+      setNews(res.data.articles);
+    })();
+  }, [API_KEY]);
 
   return (
     <div className="news-container">

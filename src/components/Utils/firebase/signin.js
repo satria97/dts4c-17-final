@@ -6,7 +6,7 @@ export const signingIn = async (email, password) => {
     const userClient = await signInWithEmailAndPassword(auth, email, password);
     return userClient.user;
   } catch (error) {
-    console.log(error);
+    console.log('error login', error);
     return error;
   }
 };

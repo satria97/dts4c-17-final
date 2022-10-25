@@ -27,7 +27,7 @@ export const Login = () => {
     if (!signedIn.message) {
       setUser(signedIn.accessToken);
     } else {
-      console.log(signedIn.message);
+      console.error(signedIn.message);
     }
   };
 
@@ -79,7 +79,6 @@ export const Login = () => {
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              autoComplete="email"
               autoFocus
             />
             <TextField
@@ -92,7 +91,6 @@ export const Login = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              autoComplete="current-password"
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}

@@ -30,7 +30,7 @@ export const SignUp = () => {
     const response = await signingUp(email, password);
     console.log('response', response);
     if (!response.message) {
-      setUser(response);
+      setUser(response.accessToken);
       const signedIn = await signingIn(email, password);
       if (!signedIn.message) {
         navigate('/');
@@ -75,36 +75,34 @@ export const SignUp = () => {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box noValidate sx={{ mt: 3 }}>
-            <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
-              />
-            </Grid>
+          <Box noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <FormControlLabel
+              control={<Checkbox value="allowExtraEmails" color="primary" />}
+              label="I want to receive inspiration, marketing promotions and updates via email."
+            />
+
             <Button
               type="button"
               onClick={signUp}
