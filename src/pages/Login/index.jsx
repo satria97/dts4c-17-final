@@ -16,8 +16,12 @@ import { signingIn } from '../../components/Utils/firebase/signin';
 
 import './index.css';
 
+import { displayToast } from '../../components/Utils/ToastNotif';
+import ToastNotif from '../../components/Utils/ToastNotif';
+
 export const Login = () => {
   const { setUser } = useContext(AuthContext);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -27,6 +31,7 @@ export const Login = () => {
       setUser(signedIn.accessToken);
     } else {
       console.error(signedIn.message);
+      displayToast('Invalid username and password! ❌', 'red');
     }
   };
 
@@ -60,7 +65,7 @@ export const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               autoFocus
               sx={{
-                '& .MuiInputLabel-root': { color: 'black' }, 
+                '& .MuiInputLabel-root': { color: 'black' },
                 '& .MuiOutlinedInput-root.Mui-focused': {
                   '& > fieldset': {
                     borderColor: 'black',
@@ -79,7 +84,7 @@ export const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               sx={{
-                '& .MuiInputLabel-root': { color: 'black' }, 
+                '& .MuiInputLabel-root': { color: 'black' },
                 '& .MuiOutlinedInput-root.Mui-focused': {
                   '& > fieldset': {
                     borderColor: 'black',
@@ -106,6 +111,7 @@ export const Login = () => {
           </Box>
         </Box>
       </Container>
+      <ToastNotif />
     </div>
   );
 };
