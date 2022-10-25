@@ -87,6 +87,7 @@ html.dark .newsbanner-info {
   .newsbanner-content img {
     width: 100%;
     height: 190px;
+    align-items: center;
   }
   .newsbanner-info-title {
     font-size: 18px;

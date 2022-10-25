@@ -1,6 +1,14 @@
 import './index.css';
+// import { Fade } from 'react-slideshow-image';
 
-export default function NewsBanner() {
+export const NewsBanner = ({
+  title,
+  cover,
+  time,
+  source,
+  description,
+  content
+}) => {
   return (
     <div className="newsbanner">
       <h1 className="newsbanner-header">Hot Topics</h1>
@@ -26,6 +34,6 @@ export default function NewsBanner() {
           Omnis consequuntur suscipit incidunt fugit!
         </p>
       </div>
-    </div>
+    </div >
   );
 }
