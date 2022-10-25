@@ -4,9 +4,7 @@ import App from './App';
 import Home from './pages/Home';
 import { Login } from './pages/Login';
 import { SignUp } from './pages/SignUp';
-import Settings from './pages/Settings';
 import NotFound from './pages/404';
-import Favorite from './pages/Favorite';
 
 export default function RouteSwitch() {
   return (
@@ -17,8 +15,6 @@ export default function RouteSwitch() {
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/favorite" element={<Favorite />} />
       </Routes>
     </BrowserRouter>
   );

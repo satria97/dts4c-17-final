@@ -1,11 +1,9 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { useNavigate } from "react-router-dom";
-import { signingOut } from "../../Utils/firebase/signout";
+import { signingOut } from '../../Utils/firebase/signout';
 
 import './index.css';
 
@@ -19,12 +17,12 @@ export default function AppBar() {
   const signOut = async () => {
     const loggedOut = await signingOut();
     if (!loggedOut.message) {
-      navigate("/signup");
+      navigate('/signup');
     }
   };
 
   function toggleDropdown() {
-    dropdown.classList.toggle('hide')
+    dropdown.classList.toggle('hide');
   }
 
   function closeDropdown() {
@@ -59,9 +57,6 @@ export default function AppBar() {
         <div>{userName}</div>
         <div>{clock}</div>
         <div className="appbar-setting-btns">
-          <button type="button">
-            <FontAwesomeIcon icon={faHeart} />
-          </button>
           <button
             type="button"
             onMouseEnter={openDropdown}
@@ -78,9 +73,6 @@ export default function AppBar() {
         onMouseEnter={openDropdown}
         onMouseLeave={closeDropdown}
       >
-        <li className="dropdown-menu-item">
-          <Link to="/settings">Settings</Link>
-        </li>
         <li className="dropdown-menu-item">
           <button onClick={signOut}>Sign Out</button>
         </li>
