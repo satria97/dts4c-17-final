@@ -1,16 +1,19 @@
-/* eslint-disable react/prop-types */
 import './index.css';
 
-export const NewsItem = ({
+export default function NewsItem({
   title,
   cover,
   time,
   source,
   description,
-  content
-}) => {
+  content,
+}) {
+  function goToDetail(url) {
+    window.open(url, '_blank');
+  }
+
   return (
-    <div className="news">
+    <div className="news" onClick={() => goToDetail(content)}>
       <img src={cover} alt={title} />
       <div className="news-info">
         <div className="news-info-title">{title}</div>
@@ -19,8 +22,7 @@ export const NewsItem = ({
           <div className="news-info-source">{source}</div>
         </div>
       </div>
-      {/* <p className="news-preview">&quot;{description}&quot;</p>
-      <p className="news-content">{content}</p> */}
+      <p className="news-preview">&quot;{description}&quot;</p>
     </div>
   );
 }

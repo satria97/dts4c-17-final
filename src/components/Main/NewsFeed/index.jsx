@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
-import { NewsItem } from './NewsItem';
-import NewsBanner from './NewsBanner';
+import NewsItem from './NewsItem';
 
 import './index.css';
 
@@ -20,26 +19,21 @@ export default function NewsFeed() {
 
       setNews(res.data.articles);
     })();
-  }, [API_KEY]);
+  }, []);
 
   return (
-    <div className="newsfeed">
-      <NewsBanner />
-      <div className="latest-news">
-        <h1 className="latest-news-heading">Latest News</h1>
-        <div className="news-container">
-          {news.map((item) => (
-            <NewsItem
-              key={uuidv4()}
-              title={item.title}
-              cover={item.urlToImage}
-              source={item.source.name}
-              time="two hours ago"
-              description={item.description}
-            />
-          ))}
-        </div>
-      </div>
+    <div className="news-container">
+      {news.map((item) => (
+        <NewsItem
+          key={uuidv4()}
+          title={item.title}
+          cover={item.urlToImage}
+          source={item.source.name}
+          time={item.publishedAt}
+          description={item.description}
+          content={item.url}
+        />
+      ))}
     </div>
   );
 }
