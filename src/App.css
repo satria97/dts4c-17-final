@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;300;400;600;700&display=swap');
+
 :root {
   --primary-color: #dfdbd5;
   --secondary-color: #fbf7f0;
@@ -6,6 +7,7 @@
   --text-color: #000;
   --input-color: #fff;
 }
+
 html.dark {
   --primary-color: #151515;
   --secondary-color: #362222;
@@ -13,23 +15,26 @@ html.dark {
   --text-color: #fff;
   --input-color: #000;
 }
+
 ::-webkit-scrollbar {
   width: 10px;
   background-color: var(--secondary-color);
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: var(--text-color);
 }
+
 body {
   font-family: 'IBM Plex Sans', sans-serif;
   background-color: var(--primary-color);
   color: var(--text-color);
   margin: 0 auto;
-  /* position: relative; */
+  position: relative;
 }
 
 .app-container {
-  padding: 50px 100px;
+  padding: 50px 50px;
   padding-bottom: 0;
 }
 
@@ -37,17 +42,21 @@ input:focus,
 button:focus {
   outline: none;
 }
+
 button {
   pointer-events: auto;
 }
+
 button:active {
   transform: scale(0.9);
 }
+
 @media (max-width: 950px) {
   .app-container {
     padding: 35px;
   }
 }
+
 @media (max-width: 400px) {
   .app-container {
     padding: 35px 15px;
