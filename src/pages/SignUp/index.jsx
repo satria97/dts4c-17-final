@@ -1,34 +1,31 @@
-import * as React from 'react';
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../components/Provider/AuthProvider';
 import { signingUp } from '../../components/Utils/firebase/signup';
 import { signingIn } from '../../components/Utils/firebase/signin';
 
 export const SignUp = () => {
   const { setUser } = useContext(AuthContext);
-  const navigate = useNavigate('');
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigate = useNavigate('');
   const signUp = async () => {
     const response = await signingUp(email, password);
-    console.log('response', response);
+
     if (!response.message) {
       setUser(response.accessToken);
       const signedIn = await signingIn(email, password);
@@ -40,25 +37,8 @@ export const SignUp = () => {
     }
   };
 
-  const theme = createTheme();
-
-  const Copyright = (props) => {
-    return (
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        align="center"
-        {...props}
-      >
-        {'Clipping © '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-  };
-
   return (
-    <ThemeProvider theme={theme}>
+    <div className="signup-page">
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -98,11 +78,6 @@ export const SignUp = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <FormControlLabel
-              control={<Checkbox value="allowExtraEmails" color="primary" />}
-              label="I want to receive inspiration, marketing promotions and updates via email."
-            />
-
             <Button
               type="button"
               onClick={signUp}
@@ -121,8 +96,7 @@ export const SignUp = () => {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
-    </ThemeProvider>
+    </div>
   );
 };
