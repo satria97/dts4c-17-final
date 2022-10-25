@@ -16,6 +16,8 @@ import { AuthContext } from '../../components/Provider/AuthProvider';
 import { signingUp } from '../../components/Utils/firebase/signup';
 import { signingIn } from '../../components/Utils/firebase/signin';
 
+import './index.css';
+
 export const SignUp = () => {
   const { setUser } = useContext(AuthContext);
 
@@ -49,7 +51,7 @@ export const SignUp = () => {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'black' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -66,6 +68,14 @@ export const SignUp = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoFocus
+              sx={{
+                '& .MuiInputLabel-root': { color: 'black' },
+                '& .MuiOutlinedInput-root.Mui-focused': {
+                  '& > fieldset': {
+                    borderColor: 'black',
+                  },
+                },
+              }}
             />
             <TextField
               margin="normal"
@@ -77,6 +87,14 @@ export const SignUp = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              sx={{
+                '& .MuiInputLabel-root': { color: 'black' },
+                '& .MuiOutlinedInput-root.Mui-focused': {
+                  '& > fieldset': {
+                    borderColor: 'black',
+                  },
+                },
+              }}
             />
             <Button
               type="button"
