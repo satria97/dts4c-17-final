@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Avatar from '@mui/material/Avatar';
@@ -42,9 +42,15 @@ export const SignUp = () => {
     }
   };
 
+  function handleKey(e) {
+    if (e.key === 'Enter') {
+      signUp();
+    }
+  }
+
   return (
     <div className="signup-page">
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" onKeyDown={handleKey}>
         <CssBaseline />
         <Box
           sx={{

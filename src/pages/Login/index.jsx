@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -35,9 +35,15 @@ export const Login = () => {
     }
   };
 
+  function handleKey(e) {
+    if (e.key === 'Enter') {
+      signIn();
+    }
+  }
+
   return (
     <div className="login-page">
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" onKeyDown={handleKey}>
         <CssBaseline />
         <Box
           sx={{
