@@ -10,7 +10,6 @@
 .news:hover {
   filter: contrast(100%);
 }
-
 .news-image {
   display: inline;
 }
@@ -32,11 +31,9 @@
   position: sticky;
   line-height: 32px;
 }
-
 html.dark .news-info {
   color: var(--text-color);
 }
-
 .news-info-title {
   width: 100%;
   font-family: 'Playfair Display';
@@ -55,73 +52,4 @@ html.dark .news-info {
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
-}
-
-.news:first-child {
-  width: 100%;
-  height: 400px;
-  display: flex;
-  gap: 20px;
-}
-
-.news:first-child::before {
-  content: 'HOT TOPICS';
-  position: absolute;
-  z-index: 10;
-  font-family: inherit;
-  font-size: 30px;
-  font-weight: 700;
-  top: 5px;
-  left: 10px;
-  opacity: 0.4;
-}
-
-.news:first-child img {
-  height: 390px;
-  width: 60%;
-  filter: contrast(100%);
-}
-
-.news:first-child:hover img {
-  opacity: 0.5;
-}
-
-.news:first-child .news-preview {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 390px;
-  width: 30%;
-  font-size: 30px;
-  margin: 0;
-  padding: 0;
-  opacity: 0.8;
-  cursor: pointer;
-}
-
-.news:first-child .news-info {
-  position: absolute;
-  bottom: 20%;
-  left: 10%;
-  width: auto;
-  color: var(--input-color);
-  gap: 20px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-html.dark .news:first-child .news-info {
-  color: var(--text-color);
-}
-
-.news:first-child .news-info-title {
-  font-size: 28px;
-  width: 350px;
-}
-
-.news:first-child .news-info-detail {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
 }

@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import './index.css';
 
-export default function NewsItem({
+export const NewsItem = ({
   title,
   cover,
   time,
   source,
   description,
-  content,
-}) {
+  content
+}) => {
   return (
     <div className="news">
       <img src={cover} alt={title} />
@@ -19,8 +19,8 @@ export default function NewsItem({
           <div className="news-info-source">{source}</div>
         </div>
       </div>
-      <p className="news-preview">&quot;{description}&quot;</p>
-      <p className="news-content">{content}</p>
+      {/* <p className="news-preview">&quot;{description}&quot;</p>
+      <p className="news-content">{content}</p> */}
     </div>
   );
 }
