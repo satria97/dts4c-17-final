@@ -4,11 +4,14 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import Logo from '../../assets/img/logo.svg'
+
 import './index.css';
 
 export default function HomePage() {
   return (
     <div className="home">
+      <img src={Logo} alt="logo" className="logo" />
       <Typography variant="h6" gutterBottom>
         daily digestible news
       </Typography>
