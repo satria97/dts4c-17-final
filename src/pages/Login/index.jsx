@@ -1,21 +1,20 @@
-import * as React from 'react';
+import { useContext, useState } from 'react';
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { useContext, useState } from 'react';
 import { AuthContext } from '../../components/Provider/AuthProvider';
 import { signingIn } from '../../components/Utils/firebase/signin';
+
+import './index.css';
 
 export const Login = () => {
   const { setUser } = useContext(AuthContext);
@@ -31,27 +30,8 @@ export const Login = () => {
     }
   };
 
-  const theme = createTheme();
-
-  const Copyright = (props) => {
-    return (
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        align="center"
-        {...props}
-      >
-        {'Clipping © '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-  };
-
-  console.log(email, password);
-
   return (
-    <ThemeProvider theme={theme}>
+    <div className="login-page">
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -62,13 +42,12 @@ export const Login = () => {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: '#000' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-
           <Box noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
@@ -80,6 +59,14 @@ export const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoFocus
+              sx={{
+                '& .MuiInputLabel-root': { color: 'black' }, 
+                '& .MuiOutlinedInput-root.Mui-focused': {
+                  '& > fieldset': {
+                    borderColor: 'black',
+                  },
+                },
+              }}
             />
             <TextField
               margin="normal"
@@ -91,10 +78,14 @@ export const Login = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              sx={{
+                '& .MuiInputLabel-root': { color: 'black' }, 
+                '& .MuiOutlinedInput-root.Mui-focused': {
+                  '& > fieldset': {
+                    borderColor: 'black',
+                  },
+                },
+              }}
             />
             <Button
               type="button"
@@ -106,11 +97,6 @@ export const Login = () => {
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
                 <Link href="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
@@ -119,8 +105,7 @@ export const Login = () => {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
-    </ThemeProvider>
+    </div>
   );
 };
