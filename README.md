@@ -8,7 +8,7 @@
 
 <h4 align="center">A minimalist news aggregator built on with <a href="https://reactjs.org/" target="_blank">ReactJS</a>.</h4>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+![screenshot](./src/assets/img/clipping.id_screenshot.png)
 
 ## Fitur Wajib
 
