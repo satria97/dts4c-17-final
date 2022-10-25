@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { listener } from '../../components/Utils/firebase/listener';
+import { listener } from '../Utils/firebase/listener';
 
 export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const onSetUser = (token) => {
-    // localStorage.setItem("access_token", token);
+
     setUser(token);
   };
 
