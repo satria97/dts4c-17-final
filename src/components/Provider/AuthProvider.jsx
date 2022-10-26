@@ -5,15 +5,28 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState();
 
+  // useEffect(() => {
+  //   listener((val) => {
+  //     const pathname = window.location.pathname;
+  //     if (val) {
+  //       if (pathname !== '/') {
+  //         window.location.replace('/');
+  //       }
+  //     } else {
+  //       if (pathname === '/') {
+  //         window.location.replace('/home');
+  //       }
+  //     }
+  //   });
+  // }, []);
+
   useEffect(() => {
     listener((val) => {
       const pathname = window.location.pathname;
-      if (val) {
-        if (pathname !== '/') {
-          window.location.replace('/');
-        }
+      if ((val && pathname === '/login') || (val && pathname === '/signup')) {
+        window.location.replace('/');
       } else {
-        if (pathname === '/') {
+        if (!val && pathname === '/') {
           window.location.replace('/home');
         }
       }
@@ -21,7 +34,6 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const onSetUser = (token) => {
-
     setUser(token);
   };
 
