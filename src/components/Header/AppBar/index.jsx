@@ -53,7 +53,7 @@ export default function AppBar() {
   return (
     <div className="appbar">
       <div className="appbar-profile-info">
-        <div>{clock}</div>
+        <div title='clock'>{clock}</div>
         <div className="appbar-setting-btns">
           <button
             type="button"
@@ -72,7 +72,7 @@ export default function AppBar() {
         onMouseLeave={closeDropdown}
       >
         <li className="dropdown-menu-item">
-          <a onClick={signOut}>Sign Out</a>
+          <button onClick={signOut}>Sign Out</button>
         </li>
       </ul>
     </div>

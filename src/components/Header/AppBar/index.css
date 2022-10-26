@@ -55,8 +55,10 @@
   padding: 10px;
 }
 
-.dropdown-menu-item a {
-  text-decoration: none;
+.dropdown-menu-item button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   color: var(--text-color);
 }
 
