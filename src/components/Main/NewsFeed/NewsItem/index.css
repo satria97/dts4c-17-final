@@ -4,6 +4,85 @@
   height: 180px;
   display: flex;
   justify-content: space-around;
+  transition: all 0.3s ease;
+}
+
+.news.detail,
+.news.detail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.news.detail img,
+.news.detail:hover img {
+  filter: brightness(30%);
+}
+
+.news.detail .news-info {
+  opacity: 0;
+}
+
+.news.detail .news-detail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--input-color);
+  z-index: 10;
+  position: relative;
+}
+
+.news-detail .read-more {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--input-color);
+  text-decoration: none;
+}
+
+.news.detail .read-more {
+  animation: glowingBtn 3s infinite;
+}
+
+.news.detail .news-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 100%;
+  text-align: justify;
+  color: var(--input-color);
+  position: absolute;
+  font-size: 1rem;
+}
+
+.read-more {
+  position: absolute;
+  font-size: 30px;
+  bottom: 10px;
+  right: 10px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--input-color);
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 100;
+}
+
+.read-more a {
+  color: var(--text-color);
+}
+
+.news:first-child .read-more {
+  right: 10px;
+  bottom: 15%;
 }
 
 .news:hover img {
@@ -55,6 +134,13 @@ html.dark .news-info {
 }
 
 .news:first-child {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  gap: 20px;
+}
+
+.news:first-child.detail {
   width: 100%;
   height: 400px;
   display: flex;
@@ -144,5 +230,20 @@ html.dark .news:first-child .news-info {
 
   .news:first-child .news-info-detail {
     font-size: 14px;
+  }
+}
+
+@keyframes glowingBtn {
+  0% {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
+  }
+  50% {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 20px var(--secondary-color);
+  }
+  100% {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
   }
 }
