@@ -18,7 +18,7 @@
 
 # Demo
 
-![Demo GIF](demo.gif)
+![Demo GIF](./demo.gif)
 
 
 [Live Demo](https://is.gd/0PNYYT)
