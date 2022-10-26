@@ -18,7 +18,7 @@
 
 # Demo
 
-dev-yurik
+Demo GIF : (Loading...)
 ![gif](./demo_gif_compressed.gif)
 
 =======
