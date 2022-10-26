@@ -18,7 +18,7 @@
 
 # Demo
 
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![Demo GIF](demo.gif)
 
 
 [Live Demo](https://is.gd/0PNYYT)
@@ -46,6 +46,8 @@
 
 [ x ] Touch screen friendly  
 [ x ] Responsive design (laptop, tablet, smartphone)
+
+API -> https://berita-indo-api.vercel.app/v1/
 
 ## Testing
 
