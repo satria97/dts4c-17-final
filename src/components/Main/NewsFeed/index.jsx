@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
+import NoImage from '../../../assets/img/no-image.jpeg'
+
 import NewsItem from './NewsItem';
 
 import './index.css';
@@ -26,10 +28,10 @@ export default function NewsFeed() {
       {news.map((item) => (
         <NewsItem
           key={uuidv4()}
-          title={item.title}
-          cover={item.urlToImage}
+          title={item.title.replace(/_[^_]+$/g, '')}
+          cover={item.urlToImage ? item.urlToImage : NoImage}
           source={item.source.name}
-          time={item.publishedAt}
+          time={item.publishedAt.slice(0, 10)}
           description={item.description}
           content={item.url}
         />
