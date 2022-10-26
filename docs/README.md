@@ -18,7 +18,7 @@
 
 # Demo
 
-![Demo GIF](demo.gif)
+![gif](./demo_gif_compressed.gif)
 
 
 [Live Demo](https://is.gd/0PNYYT)
@@ -47,7 +47,7 @@
 [ x ] Touch screen friendly  
 [ x ] Responsive design (laptop, tablet, smartphone)
 
-API -> https://berita-indo-api.vercel.app/v1/
+API yang digunakan -> https://berita-indo-api.vercel.app/v1/
 
 ## Testing
 
