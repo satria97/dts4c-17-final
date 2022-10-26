@@ -18,7 +18,10 @@
 
 # Demo
 
+dev-yurik
 ![gif](./demo_gif_compressed.gif)
+
+=======
 
 
 [Live Demo](https://is.gd/0PNYYT)
