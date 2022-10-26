@@ -10,4 +10,5 @@ footer {
   padding: 4px 0;
   line-height: 20px;
   font-family: inherit;
+  z-index: 100;
 }
