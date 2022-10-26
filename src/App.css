@@ -29,13 +29,13 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
   background-color: var(--primary-color);
   color: var(--text-color);
-  margin: 0;
-  padding-bottom: 50px;
+  margin: 0 auto;
   position: relative;
 }
 
 .app-container {
-  padding: 50px;
+  padding: 50px 50px;
+  padding-bottom: 0;
 }
 
 input:focus,

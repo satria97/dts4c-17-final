@@ -1,10 +1,11 @@
-import './index.css';
 import { useState, useEffect } from 'react';
+
+import './index.css';
 
 export default function Footer() {
   const [date, setDate] = useState();
 
-  const getYear = () => setDate(new Date().getFullYear())
+  const getYear = () => setDate(new Date().getFullYear());
 
   useEffect(() => {
     getYear();
@@ -12,7 +13,7 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <small>Clipping &#169;{date}</small>
+      <small>&#169;{date}</small>
     </footer>
-  )
+  );
 }

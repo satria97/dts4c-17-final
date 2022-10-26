@@ -1,0 +1,27 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home button {
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+}
+
+.home a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.home button:hover {
+  background-color: transparent;
+}
+
+.home .logo {
+  width: 100px;
+  padding: 20px;
+}

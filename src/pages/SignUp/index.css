@@ -1,0 +1,35 @@
+.signup-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.signup-page button {
+  background-color: var(--tertiary-color);
+  color: var(--text-color);
+}
+
+.signup-page button:hover {
+  background-color: transparent;
+}
+
+.signup-page a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+#email-label,
+#password-label {
+  color: var(--text-color);
+}
+
+.back-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}

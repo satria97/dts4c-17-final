@@ -1,0 +1,248 @@
+.news {
+  position: relative;
+  width: 270px;
+  height: 180px;
+  display: flex;
+  justify-content: space-around;
+  transition: all 0.2s ease;
+}
+
+.news.detail,
+.news.detail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.news.detail img,
+.news.detail:hover img {
+  filter: brightness(30%);
+}
+
+.news.detail .news-info {
+  opacity: 0;
+}
+
+.news.detail .news-detail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--input-color);
+  z-index: 10;
+  position: relative;
+}
+
+.news-detail .read-more {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--input-color);
+  text-decoration: none;
+}
+
+.news.detail .read-more {
+  animation: glowingBtn 3s infinite;
+}
+
+.news.detail .news-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 100%;
+  text-align: justify;
+  color: white;
+  position: absolute;
+  font-size: 1rem;
+}
+
+.read-more {
+  position: absolute;
+  font-size: 30px;
+  bottom: 10px;
+  right: 10px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--input-color);
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 100;
+}
+
+.read-more a {
+  color: var(--text-color);
+}
+
+.news:first-child .read-more {
+  right: 10px;
+  bottom: 15%;
+}
+
+.news:hover img {
+  filter: brightness(100%);
+}
+
+.news img {
+  width: 270px;
+  height: 180px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  filter: brightness(50%);
+  transition: all 0.2s ease;
+}
+
+.news-info {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  color: var(--input-color);
+  font-weight: bold;
+  text-shadow: 0 0 5px #000;
+  font-family: inherit;
+  gap: 20px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+html.dark .news-info {
+  color: var(--text-color);
+}
+
+.news-info-title {
+  font-size: 14px;
+  width: 60%;
+}
+
+.news-info-detail {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.news-preview {
+  display: none;
+}
+
+.news:first-child {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  gap: 20px;
+}
+
+.news:first-child.detail {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  gap: 20px;
+}
+
+.news:first-child img {
+  height: 390px;
+  width: 60%;
+  filter: contrast(100%);
+}
+
+.news:first-child:hover img {
+  opacity: 0.7;
+}
+
+.news:first-child .news-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 390px;
+  width: 30%;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.news:first-child .news-info {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  width: auto;
+  color: var(--input-color);
+  gap: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+html.dark .news:first-child .news-info {
+  color: var(--text-color);
+}
+
+.news:first-child .news-info-title {
+  font-size: 28px;
+  width: 350px;
+}
+
+.news:first-child .news-info-detail {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+@media (max-width: 950px) {
+  .news:first-child .news-preview {
+    display: none;
+  }
+
+  .news:first-child img {
+    width: 100%;
+    height: 350px;
+  }
+
+  .news:first-child .news-info-title {
+    width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .news:first-child {
+    margin: 0;
+    height: 200px;
+  }
+
+  .news:first-child img {
+    width: 100%;
+    height: 190px;
+  }
+
+  .news:first-child .news-info-title {
+    font-size: 18px;
+    width: 90%;
+  }
+
+  .news:first-child .news-info-detail {
+    font-size: 14px;
+  }
+}
+
+@keyframes glowingBtn {
+  0% {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
+  }
+  50% {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 20px var(--secondary-color);
+  }
+  100% {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
+  }
+}
