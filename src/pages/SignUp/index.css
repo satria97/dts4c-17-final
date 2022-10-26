@@ -26,3 +26,10 @@
 #password-label {
   color: var(--text-color);
 }
+
+.back-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
