@@ -19,7 +19,7 @@
 # Demo
 
 Demo GIF : (Loading...)
-![gif](./demo_gif_compressed.gif)
+![gif](demo_gif_compressed.gif)
 
 =======
 
